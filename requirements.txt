@@ -1,4 +1,4 @@
-fonttools==4.54.1
+fonttools==4.55.0
 fontmake==3.10.0
 fontc==0.0.1.post5
 git+https://github.com/googlefonts/fontra.git
