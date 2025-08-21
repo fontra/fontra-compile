@@ -5,7 +5,7 @@ This is for now a work in progress proof of concept.
 Initial goals:
 
 - Focus on outlines and (variable) components
-- Input: Fontra "backend" objects ([core](https://github.com/googlefonts/fontra/tree/main/src/fontra/backends) and [rcjk](https://github.com/googlefonts/fontra-rcjk/blob/main/src/fontra_rcjk/backend_fs.py))
+- Input: Fontra "backend" objects ([core](https://github.com/fontra/fontra/tree/main/src/fontra/backends) and [rcjk](https://github.com/fontra/fontra-rcjk/blob/main/src/fontra_rcjk/backend_fs.py))
 - Initially [`glyf-1`](https://github.com/harfbuzz/boring-expansion-spec/blob/main/glyf1.md)-only
 - [Variable Components](https://github.com/harfbuzz/boring-expansion-spec/blob/main/glyf1-varComposites.md)
 - [Cubics outlines in glyf](https://github.com/harfbuzz/boring-expansion-spec/blob/main/glyf1-cubicOutlines.md)

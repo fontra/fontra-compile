@@ -88,7 +88,7 @@ steps:
 # 1. VG_531A_00 contains a rectangle that has no width in a single source,
 #    which uncovered a bug with implied lineto calls with the CFF writer.
 # 2. uni3479 (㑹) which uses "asymmetrical" axes, that lead to wrong results
-#    in normalized space: https://github.com/googlefonts/fontra-compile/issues/45
+#    in normalized space: https://github.com/fontra/fontra-compile/issues/45
 steps:
 - input: fontra-read
   source: "tests/data/notosanscjksc.fontra"
