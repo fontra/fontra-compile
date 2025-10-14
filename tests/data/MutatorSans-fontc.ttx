@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.59">
+<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.60">
 
   <GlyphOrder>
     <!-- The 'id' attribute is only for humans; it is ignored when parsed. -->
@@ -63,12 +63,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="1.002"/>
-    <checkSumAdjustment value="0xf0cf7418"/>
+    <checkSumAdjustment value="0x1de43d64"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00000011"/>
     <unitsPerEm value="1000"/>
-    <created value="Fri Jul 25 06:37:21 2025"/>
-    <modified value="Fri Jul 25 06:37:21 2025"/>
+    <created value="Tue Oct 14 07:35:39 2025"/>
+    <modified value="Tue Oct 14 07:35:39 2025"/>
     <xMin value="0"/>
     <yMin value="-200"/>
     <xMax value="559"/>
@@ -439,12 +439,12 @@
     </TTGlyph>
 
     <TTGlyph name="Aacute" xMin="20" yMin="0" xMax="376" yMax="790">
-      <component glyphName="A" x="0" y="0" flags="0x204"/>
+      <component glyphName="A" x="0" y="0" flags="0x4"/>
       <component glyphName="acute" x="99" y="20" flags="0x4"/>
     </TTGlyph>
 
     <TTGlyph name="Adieresis" xMin="20" yMin="0" xMax="376" yMax="800">
-      <component glyphName="A" x="0" y="0" flags="0x204"/>
+      <component glyphName="A" x="0" y="0" flags="0x4"/>
       <component glyphName="dieresis" x="89" y="20" flags="0x4"/>
     </TTGlyph>
 
@@ -1489,7 +1489,7 @@
     </TTGlyph>
 
     <TTGlyph name="colon" xMin="60" yMin="0" xMax="110" yMax="480">
-      <component glyphName="period" x="0" y="0" flags="0x204"/>
+      <component glyphName="period" x="0" y="0" flags="0x4"/>
       <component glyphName="period" x="0" y="360" flags="0x4"/>
     </TTGlyph>
 
@@ -1560,11 +1560,11 @@
     </TTGlyph>
 
     <TTGlyph name="quotesinglbase" xMin="60" yMin="-95" xMax="111" yMax="120">
-      <component glyphName="comma" x="0" y="0" flags="0x204"/>
+      <component glyphName="comma" x="0" y="0" flags="0x4"/>
     </TTGlyph>
 
     <TTGlyph name="semicolon" xMin="60" yMin="-95" xMax="111" yMax="480">
-      <component glyphName="comma" x="0" y="0" flags="0x204"/>
+      <component glyphName="comma" x="0" y="0" flags="0x4"/>
       <component glyphName="period" x="0" y="360" flags="0x4"/>
     </TTGlyph>
 
