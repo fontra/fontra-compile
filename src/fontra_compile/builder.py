@@ -172,6 +172,10 @@ class Builder:
         self.globalAxisTags = {axis.name: axis.tag for axis in self.globalAxes}
         self.defaultLocation = {k: v[1] for k, v in self.globalAxisDict.items()}
 
+        # Fetch font-level sources so we can resolve `locationBase` references
+        # in glyph sources (a source may inherit its location from a named font source).
+        self.fontSources = await self.reader.getSources()
+
         self.cachedSourceGlyphs: dict[str, VariableGlyph | None] = {}
         self.cachedComponentBaseInfo: dict = {}
 
@@ -249,7 +253,7 @@ class Builder:
         localAxisTags = makeLocalAxisTags(axisDict, self.globalAxisDict)
         axisTags = {**self.globalAxisTags, **localAxisTags}
 
-        locations = prepareLocations(glyphSources, defaultLocation, axisDict)
+        locations = prepareLocations(glyphSources, defaultLocation, axisDict, self.fontSources)
         locations = [mapDictKeys(s, axisTags) for s in locations]
 
         model = (
@@ -689,11 +693,19 @@ class Builder:
         return varStore, advanceMapping, vOrigMapping
 
 
-def prepareLocations(glyphSources, defaultLocation, axisDict):
-    return [
-        normalizeLocation({**defaultLocation, **source.location}, axisDict)
-        for source in glyphSources
-    ]
+def prepareLocations(glyphSources, defaultLocation, axisDict, fontSources=None):
+    locations = []
+    for source in glyphSources:
+        sourceLocation = source.location.copy()
+        # `locationBase` is a master ID. The glyph source's `location` only
+        # stores axes that differ from that master's position (e.g. a brace
+        # layer adds one extra axis value). Merge the master's full location
+        # first so the glyph source's explicit values can override it.
+        if source.locationBase and fontSources and source.locationBase in fontSources:
+            baseLocation = fontSources[source.locationBase].location
+            sourceLocation = {**baseLocation, **sourceLocation}
+        locations.append(normalizeLocation({**defaultLocation, **sourceLocation}, axisDict))
+    return locations
 
 
 def checkInterpolationCompatibility(glyph: VariableGlyph, glyphSources):
