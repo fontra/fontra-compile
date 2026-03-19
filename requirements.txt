@@ -1,5 +1,6 @@
 fonttools==4.61.1
 fontmake==3.11.1
 fontc==0.6.0
+booleanOperations==0.10.0
 git+https://github.com/fontra/fontra.git
 git+https://github.com/fontra/fontra-rcjk.git
