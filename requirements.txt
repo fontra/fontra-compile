@@ -1,4 +1,4 @@
-fonttools==4.61.1
+fonttools==4.62.1
 fontmake==3.11.1
 fontc==0.6.0
 booleanOperations==0.10.0
