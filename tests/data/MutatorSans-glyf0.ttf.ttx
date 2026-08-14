@@ -63,12 +63,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="1.0"/>
-    <checkSumAdjustment value="0x165bece2"/>
+    <checkSumAdjustment value="0xe89ddd2"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00000011"/>
     <unitsPerEm value="1000"/>
-    <created value="Fri Aug 14 08:48:11 2026"/>
-    <modified value="Fri Aug 14 08:48:11 2026"/>
+    <created value="Fri Aug 14 08:59:15 2026"/>
+    <modified value="Fri Aug 14 08:59:15 2026"/>
     <xMin value="0"/>
     <yMin value="-130"/>
     <xMax value="559"/>
@@ -158,11 +158,11 @@
     <fsSelection value="00000000 00000000"/>
     <usFirstCharIndex value="32"/>
     <usLastCharIndex value="57345"/>
-    <sTypoAscender value="0"/>
-    <sTypoDescender value="0"/>
+    <sTypoAscender value="800"/>
+    <sTypoDescender value="-200"/>
     <sTypoLineGap value="0"/>
-    <usWinAscent value="0"/>
-    <usWinDescent value="0"/>
+    <usWinAscent value="800"/>
+    <usWinDescent value="200"/>
     <ulCodePageRange1 value="00000000 00000000 00000000 00000000"/>
     <ulCodePageRange2 value="00000000 00000000 00000000 00000000"/>
     <sxHeight value="0"/>
