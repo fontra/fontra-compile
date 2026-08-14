@@ -508,7 +508,12 @@ class Builder:
         builder.font["HVAR"] = hvarTable
 
         builder.setupCharacterMap(self.cmap)
-        builder.setupOS2()
+        builder.setupOS2(
+            sTypoAscender=ascender,
+            sTypoDescender=descender,
+            usWinAscent=ascender,
+            usWinDescent=-descender,
+        )
         builder.setupPost()
 
         if self.buildCFF2 and self.subroutinize:
