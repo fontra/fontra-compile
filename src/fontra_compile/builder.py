@@ -3,6 +3,7 @@ from typing import Any
 
 import cffsubr
 from fontra.core.classes import VariableGlyph
+from fontra.core.instancer import FontSourcesInstancer
 from fontra.core.path import PackedPath, Path
 from fontra.core.protocols import ReadableFontBackend
 from fontTools.designspaceLib import AxisDescriptor
@@ -442,6 +443,8 @@ class Builder:
         )
 
     async def buildFont(self) -> TTFont:
+        ascender, descender = await self._getAscenderDescender()
+
         builder = FontBuilder(
             await self.reader.getUnitsPerEm(),
             isTTF=not self.buildCFF2,
@@ -494,7 +497,7 @@ class Builder:
             varcTable = self.buildVARC(axisTags)
             builder.font["VARC"] = varcTable
 
-        builder.setupHorizontalHeader()
+        builder.setupHorizontalHeader(ascent=ascender, descent=descender)
         builder.setupHorizontalMetrics(
             dictZip(
                 getGlyphInfoAttributes(self.glyphInfos, "xAdvance"),
@@ -505,13 +508,34 @@ class Builder:
         builder.font["HVAR"] = hvarTable
 
         builder.setupCharacterMap(self.cmap)
-        builder.setupOS2()
+        builder.setupOS2(
+            sTypoAscender=ascender,
+            sTypoDescender=descender,
+            usWinAscent=ascender,
+            usWinDescent=-descender,
+        )
         builder.setupPost()
 
         if self.buildCFF2 and self.subroutinize:
             cffsubr.subroutinize(builder.font)
 
         return builder.font
+
+    async def _getAscenderDescender(self):
+        sources = await self.reader.getSources()
+        sourcesInstancer = FontSourcesInstancer(
+            fontAxes=self.globalAxes, fontSources=sources
+        )
+        defaultSource = sources.get(sourcesInstancer.defaultSourceIdentifier)
+        if defaultSource is not None:
+            ascender = defaultSource.lineMetricsHorizontalLayout["ascender"].value
+            descender = defaultSource.lineMetricsHorizontalLayout["descender"].value
+        else:
+            unitsPerEm = await self.reader.getUnitsPerEm()
+            ascender = round(0.8 * unitsPerEm)
+            descender = round(-0.2 * unitsPerEm)
+
+        return ascender, descender
 
     def buildVARC(self, axisTags):
         axisIndicesMapping = {}

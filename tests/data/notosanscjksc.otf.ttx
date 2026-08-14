@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont sfntVersion="OTTO" ttLibVersion="4.58">
+<ttFont sfntVersion="OTTO" ttLibVersion="4.63">
 
   <GlyphOrder>
     <!-- The 'id' attribute is only for humans; it is ignored when parsed. -->
@@ -21,12 +21,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="1.0"/>
-    <checkSumAdjustment value="0x59b0e8bc"/>
+    <checkSumAdjustment value="0x4298ba04"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00000011"/>
     <unitsPerEm value="1000"/>
-    <created value="Mon Jun  2 16:14:53 2025"/>
-    <modified value="Mon Jun  2 16:14:53 2025"/>
+    <created value="Fri Aug 14 08:59:15 2026"/>
+    <modified value="Fri Aug 14 08:59:15 2026"/>
     <xMin value="0"/>
     <yMin value="-120"/>
     <xMax value="1000"/>
@@ -40,8 +40,8 @@
 
   <hhea>
     <tableVersion value="0x00010000"/>
-    <ascent value="0"/>
-    <descent value="0"/>
+    <ascent value="800"/>
+    <descent value="-200"/>
     <lineGap value="0"/>
     <advanceWidthMax value="1000"/>
     <minLeftSideBearing value="0"/>
@@ -102,11 +102,11 @@
     <fsSelection value="00000000 00000000"/>
     <usFirstCharIndex value="13433"/>
     <usLastCharIndex value="21274"/>
-    <sTypoAscender value="0"/>
-    <sTypoDescender value="0"/>
+    <sTypoAscender value="800"/>
+    <sTypoDescender value="-200"/>
     <sTypoLineGap value="0"/>
-    <usWinAscent value="0"/>
-    <usWinDescent value="0"/>
+    <usWinAscent value="800"/>
+    <usWinDescent value="200"/>
     <ulCodePageRange1 value="00000000 00000000 00000000 00000000"/>
     <ulCodePageRange2 value="00000000 00000000 00000000 00000000"/>
     <sxHeight value="0"/>
