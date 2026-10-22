@@ -173,6 +173,10 @@ class Builder:
         self.globalAxisTags = {axis.name: axis.tag for axis in self.globalAxes}
         self.defaultLocation = {k: v[1] for k, v in self.globalAxisDict.items()}
 
+        # Fetch font-level sources so we can resolve `locationBase` references
+        # in glyph sources (a source may inherit its location from a named font source).
+        self.fontSources = await self.reader.getSources()
+
         self.cachedSourceGlyphs: dict[str, VariableGlyph | None] = {}
         self.cachedComponentBaseInfo: dict = {}
 
@@ -250,7 +254,9 @@ class Builder:
         localAxisTags = makeLocalAxisTags(axisDict, self.globalAxisDict)
         axisTags = {**self.globalAxisTags, **localAxisTags}
 
-        locations = prepareLocations(glyphSources, defaultLocation, axisDict)
+        locations = prepareLocations(
+            glyphSources, defaultLocation, axisDict, self.fontSources
+        )
         locations = [mapDictKeys(s, axisTags) for s in locations]
 
         model = (
@@ -713,11 +719,22 @@ class Builder:
         return varStore, advanceMapping, vOrigMapping
 
 
-def prepareLocations(glyphSources, defaultLocation, axisDict):
+def prepareLocations(glyphSources, defaultLocation, axisDict, fontSources):
     return [
-        normalizeLocation({**defaultLocation, **source.location}, axisDict)
+        normalizeLocation(
+            {**defaultLocation, **getGlyphSourceLocation(source, fontSources)}, axisDict
+        )
         for source in glyphSources
     ]
+
+
+def getGlyphSourceLocation(glyphSource, fontSources):
+    return (
+        glyphSource.location
+        if glyphSource.locationBase is None
+        or glyphSource.locationBase not in fontSources
+        else {**fontSources[glyphSource.locationBase].location, **glyphSource.location}
+    )
 
 
 def checkInterpolationCompatibility(glyph: VariableGlyph, glyphSources):
