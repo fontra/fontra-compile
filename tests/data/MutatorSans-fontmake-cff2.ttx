@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont sfntVersion="OTTO" ttLibVersion="4.67">
+<ttFont sfntVersion="OTTO" ttLibVersion="4.68">
 
   <GlyphOrder>
     <!-- The 'id' attribute is only for humans; it is ignored when parsed. -->
@@ -63,12 +63,12 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="1.002"/>
-    <checkSumAdjustment value="0x3b1a4e72"/>
+    <checkSumAdjustment value="0x97cbeb70"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00000011"/>
     <unitsPerEm value="1000"/>
-    <created value="Thu Oct 22 08:07:14 2026"/>
-    <modified value="Thu Oct 22 08:07:14 2026"/>
+    <created value="Tue Nov  3 14:48:24 2026"/>
+    <modified value="Tue Nov  3 14:48:24 2026"/>
     <xMin value="0"/>
     <yMin value="-200"/>
     <xMax value="559"/>
@@ -140,7 +140,7 @@
     <ulUnicodeRange2 value="00010000 00000000 00000000 01100000"/>
     <ulUnicodeRange3 value="00000000 00000000 00000000 00000000"/>
     <ulUnicodeRange4 value="00000000 00000000 00000000 00000000"/>
-    <achVendID value="NONE"/>
+    <achVendID value="    "/>
     <fsSelection value="00000000 01000000"/>
     <usFirstCharIndex value="32"/>
     <usLastCharIndex value="57345"/>
@@ -382,7 +382,7 @@
       Regular
     </namerecord>
     <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
-      1.002;NONE;MutatorMathTest-Regular
+      1.002;    ;MutatorMathTest-Regular
     </namerecord>
     <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
       MutatorMathTest Regular

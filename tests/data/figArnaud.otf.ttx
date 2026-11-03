@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ttFont sfntVersion="OTTO" ttLibVersion="4.63">
+<ttFont sfntVersion="OTTO" ttLibVersion="4.68">
 
   <GlyphOrder>
     <!-- The 'id' attribute is only for humans; it is ignored when parsed. -->
@@ -90,16 +90,16 @@
     <!-- Most of this table will be recalculated by the compiler -->
     <tableVersion value="1.0"/>
     <fontRevision value="1.0"/>
-    <checkSumAdjustment value="0xdfb6ec4d"/>
+    <checkSumAdjustment value="0x7ee5c701"/>
     <magicNumber value="0x5f0f3cf5"/>
     <flags value="00000000 00000011"/>
     <unitsPerEm value="1000"/>
-    <created value="Fri Aug 14 08:59:14 2026"/>
-    <modified value="Fri Aug 14 08:59:14 2026"/>
+    <created value="Mon Nov  2 14:37:08 2026"/>
+    <modified value="Mon Nov  2 14:37:08 2026"/>
     <xMin value="15"/>
-    <yMin value="-20"/>
-    <xMax value="327"/>
-    <yMax value="620"/>
+    <yMin value="-204"/>
+    <xMax value="538"/>
+    <yMax value="784"/>
     <macStyle value="00000000 00000000"/>
     <lowestRecPPEM value="3"/>
     <fontDirectionHint value="2"/>
@@ -113,9 +113,9 @@
     <descent value="-250"/>
     <lineGap value="0"/>
     <advanceWidthMax value="1000"/>
-    <minLeftSideBearing value="15"/>
+    <minLeftSideBearing value="0"/>
     <minRightSideBearing value="25"/>
-    <xMaxExtent value="327"/>
+    <xMaxExtent value="483"/>
     <caretSlopeRise value="1"/>
     <caretSlopeRun value="0"/>
     <caretOffset value="0"/>

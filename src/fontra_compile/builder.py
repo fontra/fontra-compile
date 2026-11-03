@@ -6,6 +6,7 @@ from fontra.core.classes import VariableGlyph
 from fontra.core.instancer import FontSourcesInstancer
 from fontra.core.path import PackedPath, Path
 from fontra.core.protocols import ReadableFontBackend
+from fontra.workflow.actions.glyph import ConvertToQuadratics
 from fontTools.designspaceLib import AxisDescriptor
 from fontTools.fontBuilder import FontBuilder
 from fontTools.misc.fixedTools import floatToFixed as fl2fi
@@ -153,6 +154,12 @@ class Builder:
     buildCFF2: bool = False
     subroutinize: bool = True
     useExtendedGvar: bool = False
+
+    def __post_init__(self):
+        if not self.buildCFF2:
+            reader = ConvertToQuadratics()
+            reader.input = self.reader
+            self.reader = reader
 
     async def setup(self) -> None:
         self.glyphMap = await self.reader.getGlyphMap()

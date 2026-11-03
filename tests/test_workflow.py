@@ -52,7 +52,6 @@ steps:
 steps:
 - input: fontra-read
   source: "tests/data/MutatorSans.fontra"
-- filter: convert-to-quadratics
 - output: compile-varc
   destination: "output1.ttf"
 """,
